@@ -1,0 +1,44 @@
+<html>
+
+<head>
+  <title>Voter Login : <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'default'%>
+  <script type="text/javascript">
+    window.history.forward();
+    function noBack() { window.history.forward(); }
+  </script>
+</head>
+
+<body onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload="" >
+	<div align="center">
+	<div class="ribbon">
+		<div class="ribbon-stitches-top"></div>
+		<strong class="ribbon-content"><h1>Parliament Election 2014</h1></strong>
+		<div class="ribbon-stitches-bottom"></div>
+	</div>
+	</div>
+		
+	<br><p style="color: green"><%= flash[:notice] %></p>
+	<div>
+  <% if session[:voter_id] %>
+	<br>Voter_Id : <%= session[:voter_id] %><br>
+	<br><a href="/sessions/destroy">Log Out</a>
+  <% end %>
+	</div>
+	<div>
+<%= yield %>
+	</div>
+	<br>
+	<div >
+		
+		<div class="apollo-image" style="float: right;background-image: url('images/rg.png')"> </div>
+		
+        <div class="apollo-image" style="float: right; background-image: url('images/av.png')"> </div>
+
+        <div class="apollo-image" style="float:right;background-image: url('images/nm.png'); margin-left: 14%;"> </div>
+               
+        
+                        
+	</div>
+</body>
+</html>

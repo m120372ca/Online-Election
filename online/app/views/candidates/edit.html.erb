@@ -1,0 +1,32 @@
+<h1>Editing Candidate</h1>
+
+<%= error_messages_for :candidate %>
+
+<% form_for(@candidate,:url=>{:action=>'update'}) do |f| %>
+ <p>
+    <b>Name</b><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <b>Constituency</b><br />
+    <%= f.text_field :constituency %>
+  </p>
+
+  <p>
+    <b>Votes</b><br />
+    <%= f.text_field :votes %>
+  </p>
+
+  <p>
+    <b>Party</b><br />
+    <%= f.text_field :party %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<a href="/candidates/<%=@candidate.id%>">Show</a> |
+<a href="/candidates">Back</a>

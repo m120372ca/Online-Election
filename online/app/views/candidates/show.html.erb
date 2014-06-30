@@ -1,0 +1,23 @@
+<p>
+  <b>Candidate's Name:</b>
+  <%= @candidate.name %>
+</p>
+
+<p>
+  <b>Constituency:</b>
+  <%= @candidate.constituency %>
+</p>
+
+<p>
+  <b>Votes:</b>
+  <%= @candidate.votes %>
+</p>
+
+<p>
+  <b>Party:</b>
+  <%= @candidate.party %>
+</p>
+
+
+<a href="/candidates/<%= @candidate.id %>/edit">Edit</a> |
+<a href="/candidates">Back</a>

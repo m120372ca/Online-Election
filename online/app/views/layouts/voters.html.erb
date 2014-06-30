@@ -1,0 +1,41 @@
+<html>
+
+<head>
+	<title>Voters: <%= controller.action_name %></title>
+	<%= stylesheet_link_tag 'default'%>
+</head>
+
+<body>
+	<div align="center">
+	<div class="ribbon">
+		<div class="ribbon-stitches-top"></div>
+		<strong class="ribbon-content"><h1>Parliament Election 2014</h1></strong>
+		<div class="ribbon-stitches-bottom"></div>
+	</div>
+	</div>
+	<span style="text-align: right">
+		<% form_tag "/voters/find" do %>
+			<%= text_field_tag :search_string %>
+			<%= submit_tag "search" %>
+		<% end %>
+	</span>
+
+	<div>
+<%= yield %>
+	</div>
+	<br>
+	<div >
+		
+		<div class="apollo-image" style="float: right;background-image: url('images/rg.png')"> </div>
+		
+        <div class="apollo-image" style="float: right; background-image: url('images/av.png')"> </div>
+
+        <div class="apollo-image" style="float:right;background-image: url('images/nm.png'); margin-left: 14%;"> </div>
+               
+        
+                        
+	</div>
+	
+</body>
+
+</html>

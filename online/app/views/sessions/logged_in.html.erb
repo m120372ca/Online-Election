@@ -1,0 +1,14 @@
+<br>
+<div>
+	<p>
+    <br><a href="/sessions/edit">Change Password</a></br>
+	</p>
+	<p>
+	<% @voters= Voter.find(:all, :conditions=> ["id = ?", session[:voter_id]])%>
+	<% for voter in @voters %>
+	<% if voter.vote==false %>
+	<br><a href="/sessions/voting">Vote</a></br>
+	<% end %>
+	<% end %>
+	</p>
+</div>

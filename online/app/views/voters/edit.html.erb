@@ -1,0 +1,32 @@
+<h1>Editing Voter </h1>
+
+<%= error_messages_for :voter %>
+
+<% form_for(@voter,:url=>{:action=>'update'}) do |f| %>
+ <p>
+    <b>Name</b><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <b>Password</b><br />
+    <%= f.password_field :password %>
+  </p>
+  
+  <p>
+    <b>Constituency</b><br />
+    <%= f.text_field :constituency %>
+  </p>
+
+  <p>
+    <b>Voted</b><br />
+    <%= f.radio_button :vote ,'false' , :checked => true %> False 
+	<%= f.radio_button :vote ,'true'  %> True
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<a href="/voters">Back</a>

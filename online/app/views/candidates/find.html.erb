@@ -1,0 +1,23 @@
+<h1>Listing Candidates for <%= params[:search_string] %></h1>
+
+<table>
+  <tr>
+    <th>Candidate's name</th>
+    <th>Constituency</th>
+    <th>Party</th>
+  </tr>
+
+<% for candidate in @candidates %>
+  <tr>
+    <td><%= candidate.name  %></td>
+    <td><%= candidate.constituency %></td>
+    <td><%= candidate.party %></td>
+    <td><a href="/candidates/<%= candidate.id %>">Show</a></td>
+    <td><a href="/candidates/<%= candidate.id %>/edit">Edit</a></td>
+    <td><a href="/candidates/<%= candidate.id %>/delete">Delete</a></td>
+  </tr>
+<% end %>
+</table>
+<br>
+<a href="/candidates">Back</a>
+

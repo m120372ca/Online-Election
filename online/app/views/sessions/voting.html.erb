@@ -1,0 +1,29 @@
+<br><h1>Please Vote !!! </h1></br>
+<% flash[:notice] = "Logged in" %>
+<p>
+<div>
+<form action="/sessions/voted" method="get">
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Party</th>
+  </tr>
+<% @voters = Voter.find(:all, :conditions=> ["id = ?", session[:voter_id]]) %>
+<%	for voter in @voters %>
+<%		@candidates= Candidate.find(:all) %>
+<%		for candidate in @candidates %>
+<%			if candidate.constituency==voter.constituency %>
+	<tr>
+    <td><%= candidate.name  %></td>
+    <td><%= candidate.party %></td>
+    <td><input type="radio" name="id" value=<%=candidate.id%>></td>
+	</tr>
+<%			end %>
+<% 		end %>
+<% 	end %>
+</table>
+<br><input type="submit" value="VOTE">
+</form>
+</div>
+</p>	
+<br><a href="/sessions/logged_in">Back</a>	

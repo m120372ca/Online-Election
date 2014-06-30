@@ -1,0 +1,16 @@
+<h1>Change Voter Password </h1>
+
+<%= error_messages_for :voter %>
+
+<% form_for(@voter,:url=>{:action=>'update'}) do |f| %>
+
+  <p>
+    <br><b>Password</b><br />
+    <%= f.password_field :password %>
+  </p>
+
+  <p>
+    <%= f.submit "Change" %>
+  </p>
+<% end %>
+<br><a href="/sessions/logged_in">Back</a>
